@@ -22,7 +22,7 @@ router.get("/example",async(req,res)=>{
 
     try{
     const user= await restro.restroDetails.find()
-    res.status(201).send(user);
+    res.status(200).send(user);
 }catch(err){
     console.log(err)
 }
@@ -32,7 +32,7 @@ router.delete("/example/:id",async(req,res)=>{
 const id=req.params.id;
     try{
     const user= await restro.restroDetails.findByIdAndDelete(id)
-    res.status(201).send(user);
+    res.status(200).send(user);
 }catch(err){
     console.log(err)
 }
@@ -47,7 +47,7 @@ router.put("/example/:id",async(req,res)=>{
     }
 try{
     const user= await restro.restroDetails.findByIdAndUpdate(id,body,{new:true});
-    res.status(201).send(user);
+    res.status(200).send(user);
 }catch(err){
     console.log(err)
 }
